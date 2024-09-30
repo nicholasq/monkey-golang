@@ -1,0 +1,17 @@
+let array = ["one", "two", "three", "four"];
+
+let forEach = fn(arr, f) {
+  let size = len(arr);
+
+  let iter = fn(arr, curr) {
+    if (curr == size) {
+        return;
+    }
+    f(arr[curr]);
+    iter(arr, curr + 1);
+  }
+
+  iter(arr, 0);
+}
+
+forEach(array, puts);
